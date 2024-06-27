@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"></head></script>
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384- KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>User Profile</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #009999;
+            color: white;
+            padding: 20px 20px;
+        }
+        #header .navigation {
+            display: flex;
+            gap: 50px;
+        }
+        #header .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+    margin-top: 25px;
+        }
+        .profile {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .profile img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            font-size: 50px;
+        }
+
+.dashboard {
+    position: fixed;
+    top: 450px;
+    right: 0;
+    left: 0;
+    height: 20; 
+    background-color: white;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+.menu-options ul {
+    list-style: none;
+    padding: 0; /* Remove default list padding */
+    display: flex; /* Display buttons in a row */
+}
+.menu-options li {
+    margin-right: 20px;
+}
+
+.button {
+    background-color:transparent;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: white;
+    color: #009999;
+    text-decoration: none;
+}
+.logo-text {
+    margin-left: 7px;; /* Adjust the margin as needed to position the text correctly */
+    font-size: 40px; 
+    display: inline-block; /* Ensures that vertical-align works */
+    vertical-align: middle;
+    font-weight: bold; /* Optionally, make the text bold */
+    color: white; 
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+            <div class="logo">
+                <img src="{% static 'G.jpg' %}" alt="ARY GALLERY"  height="75" class="rounded-circle">
+                    <span class="logo-text">ART GALLERY</span>
+            </div>
+        <div class="navigation">
+            <a href="{%url 'vieworders'%}">View Orders</a>
+            <a href="{%url 'paintings'%}">Paintings</a>
+            <a href="{%url 'videos' %}">videos</a>
+            <a href="{%url 'profile'%}">Profile</a>
+            <a href="{%url 'logout'%}">Logout</a> 
+        </div>
+    </div>
+    <div class="profile">
+      <!-- Replace the static profile picture source with the user's uploaded image path -->
+      
+<img src="{{MEDIA_URL}}{{ user_posts.1 }}" alt="User's Profile Picture" class="rounded-circle" width="200" height="200"><br/> <!-- Apply different styles to different parts of the username -->
+    <h1>
+        <span class="username-part1">{{ user_posts.0|slice:":0" }}</span>
+        <span class="username-part2">{{ user_posts.0|slice:"19" }}</span>
+    </h1>
+
+<!-- ... (other profile information) -->
+<div class="dashboard">
+    <div class="menu">
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-options">
+            <ul>
+                <ul class="centered-menu">
+                <li><a href="{% url 'post' %}" class="button">Add Post</a></li>
+                <li><a href="{% url 'profilesetting' %}" class="button">Profile settings</a></li>
+                <li><a href="{% url 'posts' %}" class="button">All Posts</a></li>
+                <li><a href="{% url 'bank_details'%}" class="button">Bank Details</a></li>
+            </ul>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

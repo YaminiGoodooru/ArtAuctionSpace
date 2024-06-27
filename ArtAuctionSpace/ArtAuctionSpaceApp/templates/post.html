@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Welcome|ArtGallery</title>
+<style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #009999;
+            color: white;
+            padding: 20px 20px;
+        }
+        #header .navigation {
+            display: flex;
+            gap: 50px;
+        }
+        #header .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+    margin-top: 25px;
+        }
+.card{
+box-shadow: -10px 10px 12px grey; width: 600px;
+}
+.button {
+    background-color: #009999;
+    color: #fff;
+    padding: 15px 30px; /* Increase the padding to make the button larger */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px; /* Increase the font size to make the text larger */
+}
+.logo-text {
+    margin-left: 7px;; /* Adjust the margin as needed to position the text correctly */
+    font-size: 40px; 
+    display: inline-block; /* Ensures that vertical-align works */
+    vertical-align: middle;
+    font-weight: bold; /* Optionally, make the text bold */
+    color: white; 
+}
+
+</style>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <img src="{% static 'G.jpg' %}" alt="ARY GALLERY"  height="75" class="rounded-circle">
+                <span class="logo-text">ART GALLERY</span>
+        </div>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data- target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>	<div class="container">
+<h3 class="text text-center text-info mt-5 mb-5">POST SOMETHING HERE..</h3>
+<section class="section d-flex justify-content-center">
+<div class="row card">
+<div class="col-lg-12 my-5 px-5">
+<form method="POST" action="post" enctype="multipart/form-data">
+{% csrf_token %}  
+<div class="form-group">
+<input type="text" class="form-control" name="email_input" placeholder="enter the email" value=""required >
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="artname_input" placeholder="Name of the Art" value=""required >
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="artistname_input" placeholder="Name of the Artist" value="" required>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="materials_input" placeholder="Materials Used" value="" required>
+</div>
+<div class="form-group">
+<input type="text" class="form-control"
+name="mobileno_input" placeholder=" mobile number" value="" required>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="upi_id_input" placeholder="Enter your UPI ID" value="" required>
+</div>
+<div class="form-group">
+<input type="text" class="form-control"
+name="price_input" placeholder="Enter Your Base Price of this Art" value="" required>
+</div>
+<div class="form-group">
+<textarea name="description_input" id="" cols="30" rows="10" class="form- control"placeholder="Post Description.."></textarea>
+</div>
+<div class="form-group">
+    <label for="image">Images</label>
+<input type="file" class="form-control" name="image_input" value=""required>
+</div>
+<div class="form-group">
+    <label for="video">Upload Video (optional)</label>
+    <input type="file" class="form-control" name="video_input" accept="video/*">
+</div>
+<div class="btn-group d-flex">
+<button type="submit" class="btn btn-success">Submit</button>
+</body>
+</html>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+<div class="container text-center mt-4" style="padding-top: 20px;">
+    <a href="{% url 'profile' %}" class="button">BACK</a>
+</div>
+</body>
+</html>

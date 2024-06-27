@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... (your existing head content) ... -->
+  <style>
+    /* ... (your existing styles) ... */
+    .terms {
+      display: none; /* Initially hide the terms and conditions */
+    }
+  </style>
+</head>
+<body>
+  <!-- ... (your existing navigation and form) ... -->
+
+  <!-- Add the "Terms and Conditions" container -->
+  <div class="container card mt-5">
+    <p class="text signup">SIGN UP HERE</p>
+    <div class="row d-flex">
+      <div class="col-lg-7">
+        <form action="/signup" method="POST" class="mt-5 ml-5 mb-5">
+          <!-- ... (your existing form fields) ... -->
+          <input type="checkbox" id="acceptTerms" required>
+          <label for="acceptTerms">I agree to the <a href="#" id="showTerms">Terms and Conditions</a></label>
+        </form>
+      </div>
+      <div class="co-lg-5">
+        <img src="signup.png" class="img img-fluid" alt="" style="width: 350px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the "Terms and Conditions" text container -->
+  <div class="container mt-3">
+    <div class="terms" id="termsText">
+      <!-- Your terms and conditions text goes here -->
+      <h2>Terms and Conditions</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+    </div>
+  </div>
+
+  <!-- Add JavaScript to toggle visibility -->
+  <script>
+    const showTermsLink = document.getElementById('showTerms');
+    const termsText = document.getElementById('termsText');
+
+    showTermsLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      termsText.style.display = (termsText.style.display === 'none') ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

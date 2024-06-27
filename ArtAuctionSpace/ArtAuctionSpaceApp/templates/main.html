@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous"></head></script>
+<script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384- KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<title>Art Gallery</title>
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0; if(navigator.appName == "Netscape")
+document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP); function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button; if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler; document.onmousedown = mousehandler; document.onmouseup = mousehandler;
+</script>
+</head>
+
+
+<!-- navbar goes here -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
+  <a class="navbar-brand" href="#">
+    <img src="{% static 'G.jpg' %}" alt="Art Gallery Logo" height="150">
+</a>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item active">
+<a class="nav-link" href="{%url 'main'%}">Home <span class="sr- only"></span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{%url 'signup' %}">Signup</a>
+</li>
+<!-- Update the "Login" link in your main HTML file -->
+<li class="nav-item">
+  <a class="nav-link" href="{%url 'login'%}">Login</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{%url 'about'%}">About Us</a>
+  </li>
+</ul>
+</div>
+</nav>
+<!-- navbar ends here -->
+<div class="container-fluid upperpart mb-5">
+<div class="d-flex justify-content-around">
+<p class="text text-center my-5" style="font-size: 22px;"><span class="background:transparwnt;"></span>CREATIVITY TAKES COURAGE </p>
+<button class="my-5 " id="Explore_btn"><a href="#" style="color:black;font-weight: bold;">Explore More</a></button>
+</div>
+<!-- Image Gallery -->
+<div class="container-fluid upperpart mb-5">
+  <div class="row">
+    <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'oil painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>OIL PAINTING</h3>
+                  <p>Oil painting is a technique that uses pigments mixed with a drying oil (usually linseed oil) to create art. It is known for its rich, vibrant colors, and the slow drying time allows for blending and layering.
+                    Example: "Starry Night" by Vincent van Gogh.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'waterlilles.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>WATERCOLOR PAINTING</h3>
+                  <p>Watercolor painting is characterized by its transparent and delicate quality. Artists use watercolor pigments, typically in the form of small tubes or pans, mixed with water to create their artworks. The paint is applied to paper, and the translucency of the watercolor allows light to pass through the pigments, creating a luminous effect. Artists often use techniques like layering, wet-on-wet, and dry brushing to achieve various textures and effects. Watercolor paintings can range from highly detailed and realistic to loose and impressionistic, making it a versatile medium for artists.
+                    Example: "Water Lilies" by Claude Monet:</p>
+                </div>
+              </div>
+             <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'abstract painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>ABSTRACT PAINTING</h3>
+                  <p>Abstract painting is a dynamic and expressive form of art that liberates artists from the confines of representing recognizable objects. Instead, it harnesses the power of color, shape, form, and texture to convey emotions, ideas, and sensations. Through bold brushwork, gestural marks, and inventive compositions, abstract painters invite viewers to explore their own interpretations and emotional responses, making it a genre that celebrates creativity, freedom, and the limitless possibilities of artistic expression.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                    <img src="{% static 'acrylic painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>ACRYLIC PAINTING</h3>
+                  <p>Acrylic Painting has become extremely popular today with artists and 
+                    crafts men and women all over the world. No longer do we have to worry 
+                    about odors and allergies to solvents, so common to oil painting. Another 
+                    advantage of painting with acrylics is their versatility of use and their 
+                    relatively quick drying time (often just a few minutes.) However if a longer 
+                    drying time is needed in specific cases, a medium for use with acrylic 
+                    paints has been developed. Thus, acrylic painting is often considered 
+                    a much more desirable method of paint</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'cubist painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>CUBIST PAINTING</h3>
+                  <p>Cubist painting, born in the early 20th century with artists like Pablo Picasso and Georges Braque, revolutionized the art world by deconstructing objects and subjects into geometric shapes and fragmented forms. This innovative style presents multiple perspectives within a single artwork, challenging traditional notions of representation and perception. Cubism's influence extends beyond art, impacting literature, architecture, and design, and continues to be celebrated for its groundbreaking approach to visual storytelling and abstraction.
+                     Example:cubist 9 by Thomas C.Fedro</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'Surrealist painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>SURREALISTIC PAINTING</h3>
+                  <p>Surrealist painting, a prominent movement in the 20th century led by artists like Salvador Dalí and René Magritte, explores the world of dreams and the subconscious mind. Surrealist artworks often feature bizarre, dreamlike, and fantastical imagery, creating a sense of mystery and irrationality. By juxtaposing seemingly unrelated elements and defying conventional logic, surrealist painters invite viewers to delve into the realms of the unconscious, challenging the boundaries of reality and imagination. Surrealist painting remains a captivating and thought-provoking genre, leaving room for personal interpretation and introspection.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'realist painting.jpg' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>REALISTIC PAINTING</h3>
+                  <p>Realistic painting, a traditional art form that has evolved over centuries, strives to depict subjects with meticulous attention to detail and accuracy, aiming to capture a faithful representation of the real world. Realistic painters use techniques like shading, perspective, and fine brushwork to create images that closely resemble the subjects they depict, whether it's a portrait, still life, or landscape. This genre celebrates the skill and precision of artists in capturing the essence of reality, making it a timeless and enduring style that continues to be appreciated for its technical prowess and ability to evoke a strong sense of familiarity and recognition.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="image-container">
+                  <img src="{% static 'impressionist painting.jpg.crdownload' %}" alt="" class="img img-fluid" style="height: 300px;">
+                  <h3>IMPRESSIONIST PAINTING</h3>
+                  <p>Impressionist painting, pioneered in the late 19th century by artists like Claude Monet and Pierre-Auguste Renoir, is renowned for its focus on capturing the fleeting effects of light, color, and atmosphere in a scene. This movement aimed to convey the immediate sensory experience of a moment rather than providing a precise representation. Characterized by rapid brushwork, vibrant colors, and an emphasis on the interplay of light and shadow, Impressionist artworks often depict landscapes, outdoor scenes, and everyday life with a sense of spontaneity and vibrancy. The genre revolutionized the art world, influencing subsequent movements and continues to be celebrated for its ability to evoke emotion and transport viewers to a specific time and place.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- Footer -->
+<div class="container-fluid my-4 bg-dark text-white py-4">
+  <div class="row">
+    <div class="col-lg-4 col-md-5">
+      <ul class="nav d-flex flex-column">
+        <li class="nav-item"><a href="{%url 'login' %}">Login</a></li>
+        <li class="nav-item"><a href="{%url 'signup' %}">Sign up</a></li>
+        <li class="nav-item"><a href="{%url 'about' %}"> About us</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <p class="text text-center mt-3">&copy; to ArtGallery 2022-23</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

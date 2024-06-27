@@ -1,0 +1,85 @@
+<html>
+<head>
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+
+</head>
+<body>
+<form id='f1' method="POST">
+    {%csrf_token%}
+{{pid}}
+<table border='2' align='center'>
+    <tr>
+    <td class='exstyle'>Post Id</td>
+    <td>
+    <input type='text' readonly id='pid' name='pid' value="{{post.pid}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Art Name</td>
+    <td>
+    <input type='text' id='artname' name='artname' value="{{post.artname}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Artist Name</td>
+    <td>
+    <input type='text' id='artistname' name='artistname' value="{{post.artistname}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Materials used</td>
+    <td>
+    <input type='text' id='materials' name='materials' value="{{post.materials}}"/>
+    </td>
+    </tr>
+    <tr>
+        <td class='exstyle'>Mobile number</td>
+        <td>
+        <input type='text' id='mobilenumber' name='mobilenumber' value="{{post.mobilenumber}}"/>
+        </td>
+        </tr>
+        <tr>
+            <td class='exstyle'>UPI ID</td>
+            <td>
+            <input type='text' id='upi_id' name='upi_id' value="{{post.upi_id}}"/>
+            </td>
+            </tr>
+        
+            <tr>
+                <td class='exstyle'>Price</td>
+                <td>
+                <input type='text' id='price' name='price' value="{{post.price}}"/>
+                </td>
+                </tr>
+                <tr>
+                    <td class='exstyle'>Description</td>
+                    <td>
+                    <input type='text' id='description' name='description' value="{{post.description}}"/>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td class='exstyle'>Image</td>
+                        <td>
+                        <input type='text' id='image' name='image' value="{{post.image}}"/>
+                        </td>
+ </tr>
+ <tr>
+ <td class='exstyle'>Video</td>
+<td>
+ <input type='text' id='video' name='video' value="{{post.video}}"/>
+ </td>
+</tr>                            
+    <tr>
+    <td>
+    <input type='submit'  id='b1' name='b1' onclick="checkbutton('update')"  value='Update'/>
+    </td>
+    <input type='button' id='b3' name='b3' value='clear'/>
+    </td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>
+
+

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"></head></script>
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384- KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>User Profile</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #009999;
+            color: white;
+            padding: 20px 20px;
+        }
+        #header .navigation {
+            display: flex;
+            gap: 50px;
+        }
+        #header .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+    margin-top: 25px;
+        }
+
+.button:hover {
+    background-color: white;
+    color: #009999;
+    text-decoration: none;
+}
+.logo-text {
+    margin-left: 7px;; /* Adjust the margin as needed to position the text correctly */
+    font-size: 40px; 
+    display: inline-block; /* Ensures that vertical-align works */
+    vertical-align: middle;
+    font-weight: bold; /* Optionally, make the text bold */
+    color: white; 
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+            <div class="logo">
+                <img src="{% static 'G.jpg' %}" alt="ARY GALLERY"  height="75" class="rounded-circle">
+                    <span class="logo-text">ART GALLERY</span>
+            </div>
+        <div class="navigation">
+            <a href="{%url 'vieworders'%}">View Orders</a>
+            <a href="{%url 'paintings'%}">Paintings</a>
+            <a href="{%url 'videos' %}">videos</a>
+            <a href="{%url 'profile'%}">Profile</a>
+            <a href="{%url 'logout'%}">Logout</a> 
+        </div>
+    </div>
+    <h2>see your orders</h2>
+            <ul>
+                <li>
+                    <table border='5' align='center'>
+                        <tr>
+                            <td colspan="9">
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>buyer</td>
+                        <td>seller</td>
+                        <td>pid</td>
+                        <td>date</td>
+                    </tr>
+                    {%for x in orderdetails %}
+                    <tr>
+                        <td>{{x.buyer}}</td>
+                        <td>{{x.seller}}</td>
+                        <td>{{x.pid}}</td>
+                        <td>{{x.date}}</td>
+                    </tr>
+                    {%endfor%}
+                </li>
+                <li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
